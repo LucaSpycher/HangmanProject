@@ -1,0 +1,17 @@
+nav {
+    background-color: #559bff;
+}
+
+p {
+    display: inline;
+}
+
+ul {
+    display: inline;
+    list-style-type: none;
+}
+
+li {
+    margin: 5px;
+    display: inline-block;
+}
