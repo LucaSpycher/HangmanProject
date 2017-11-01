@@ -1,7 +1,6 @@
 /**
  * Created by spycher_family on 10/26/2017.
  */
-var categoryNum = 0;
 
 var cars = [];
 var food = [];
@@ -16,8 +15,10 @@ function getWord(num) {
     return category[rand];
 }
 
-function onSubmit() {
-    var categoryNum = document.getElementsByName("categorySelect").value;
 
+function onSubmit() {
+    var categoryNum = document.getElementById("categorySelect").value;
+    var word = getWord(categoryNum);
+    document.getElementById("output").innerHTML = word;
 
 }
