@@ -17,7 +17,7 @@ function getWord(num) {
 }
 
 function startGame() {
-
+    makeBoard();
 
 }
 
@@ -29,5 +29,13 @@ function submitLetter() {
         if(word[i] == letter) {
 
         }
+    }
+}
+
+function makeBoard() {
+    document.getElementById("keyboard").innerHTML = "";
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    for(var i = 0; i < alphabet.length; i++) {
+        document.getElementById("keyboard").innerHTML += "<div id="+alphabet[i]+">"+alphabet[i]+"</div>";
     }
 }
