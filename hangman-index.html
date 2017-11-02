@@ -21,11 +21,20 @@
         <li><a id="cars">Cars</a></li>
         <li><a id="food">Food</a></li>
         <li><a id="randomWords">Random Words</a></li>
-        <li><a id="animals" href="#">Animals</a></li>
+        <li><a id="animals" href="javascript:void(0);">Animals</a></li>
     </ul>
 </nav>
 -->
-<button onclick="onSubmit()">Choose Category</button>
-<div id="output"></div>
+<button onclick="startGame()">Start Game</button>
+
+<form onsubmit="submitLetter()">
+    <label for="enterLetter">Your Guess:</label>
+    <input type="text" id="enterLetter" size="1" maxlength="1">
+</form>
+
+<div id="board"></div>
+
+<div id="guessedLetters"></div>
+
 </body>
 </html>
