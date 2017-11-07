@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="hangman-style.css"/>
     <script src="hangman-script.js"></script>
 </head>
-<body onload="makeBoard()">
+<body>
+
 <p>Categories:</p>
 <select title="Choose Category" id="categorySelect">
     <option value="0">Cars</option>
@@ -16,13 +17,16 @@
 </select>
 <button onclick="startGame()">Start Game</button>
 
-<form onsubmit="submitLetter()">
-    <label for="enterLetter">Your Guess:</label>
-    <input type="text" id="enterLetter" size="1" maxlength="1">
-</form>
 
-<div id="boardOutput"></div>
-<div id="keyboard"></div>
+<br>
+<br>
+
+<div id="board"></div>
+
+<div id="guessDiv">
+    <label for="enterLetter">Your Guess:</label>
+    <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="submitLetter()">
+</div>
 
 <div id="guessedLetters"></div>
 

@@ -1,36 +1,28 @@
-/* nav {
-    background-color: #559bff;
+body {
+    text-align: center;
 }
-
 p {
     display: inline;
 }
 
-ul {
-    display: inline;
-    list-style-type: none;
-}
-
-li {
-    margin: 5px;
-    display: inline-block;
-} */
-#keyboard {
-    border: black double 2px;
-    min-height: 100px;
-    width: 50%;
+#board {
+    border: double 5px black;
+    display: none;
     margin-left: auto;
     margin-right: auto;
+    width: auto;
 }
 
-#keyboard div {
-    background-color: lightgray;
+#board div{
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: lightgray;
     margin: 5px;
 }
 
-p {
-    display: inline;
+#guessDiv {
+    display: none;
+    margin: 20px auto 10px auto;
+    width: 100px;
 }
