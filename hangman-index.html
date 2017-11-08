@@ -25,10 +25,12 @@
 
 <div id="guessDiv">
     <label for="enterLetter">Your Guess:</label>
-    <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="submitLetter()">
+    <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="checkEnter(event)">
 </div>
 
 <div id="guessedLetters"></div>
+
+<div id="demo"></div>
 
 </body>
 </html>
