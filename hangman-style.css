@@ -11,6 +11,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: auto;
+    min-height: 64px;
 }
 
 #board div{
@@ -22,8 +23,26 @@ p {
     padding-top: 15px;
 }
 
-#guessDiv {
+#board p{
+    line-height: 32px;
+    margin: 30px;
+}
+
+#guessLetterDiv {
     display: none;
     margin: 20px auto 10px auto;
-    width: 100px;
+    width: 150px;
+}
+
+#hangmanImage {
+    float: left;
+    margin: 20px;
+}
+
+#guessesLeftDiv {
+    display: none;
+}
+
+#guessesLeft {
+    display: inline;
 }

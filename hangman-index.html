@@ -7,8 +7,8 @@
     <script src="hangman-script.js"></script>
 </head>
 <body>
-
-<p>Categories:</p>
+<h2>Hangman Game</h2>
+<p>Choose a category:</p>
 <select title="Choose Category" id="categorySelect">
     <option value="0">Cars</option>
     <option value="1">Food</option>
@@ -17,18 +17,23 @@
 </select>
 <button onclick="startGame()">Start Game</button>
 
-
 <br>
 <br>
 
 <div id="board"></div>
 
-<div id="guessDiv">
-    <label for="enterLetter">Your Guess:</label>
+<div id="guessLetterDiv">
+    <label for="enterLetter">Guess a letter:</label>
     <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="checkEnter(event)">
+</div>
+<div id="guessesLeftDiv">
+    <p>Guesses left: </p>
+    <div id="guessesLeft"></div>
 </div>
 
 <div id="guessedLetters"></div>
+
+<img id="hangmanImage" src="">
 
 </body>
 </html>
