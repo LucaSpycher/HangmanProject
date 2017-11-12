@@ -1,7 +1,7 @@
 /**
  * Created by spycher_family on 10/26/2017.
  */
-console.log("the ting goes popopop");
+console.log("the ting goes skeyeeeyaaa");
 
 /////////////////////////////////// WARNING FATTY ARRAYS COMING UP /////////////////////////////////////////////////////
 var images = ["https://www.oligalma.com/downloads/images/hangman/files/10.jpg", "https://www.oligalma.com/downloads/" +
@@ -54,6 +54,7 @@ function getWord(num) {
 }
 
 function startGame() {
+    correctLetters = 0;
     previouslyGuessed = '';
     guessesLeft = 10;
     document.getElementById('guessedLetters').innerHTML = '';
@@ -61,6 +62,7 @@ function startGame() {
     document.getElementById('enterLetter').disabled = false;
     document.getElementById('guessesLeft').innerHTML = "10";
     document.getElementById('guessesLeftDiv').style.display = "block";
+    document.getElementById('message').innerHTML = '';
 
     //getting word
     getWord(document.getElementById("categorySelect").value);
@@ -83,8 +85,10 @@ function checkEnter(event) {
     }
 }
 
+var correctLetters = 0;
+
 function submitLetter() {
-    var input = document.getElementById('enterLetter').value;
+    var input = document.getElementById('enterLetter').value.toLowerCase();
     var inWord = false;
 
     for (var i = 0; i < word.length; i++) {
@@ -92,6 +96,8 @@ function submitLetter() {
             console.log("right guess");
             inWord = true;
             displayLetterInBoard(input);
+            correctLetters++;
+            console.log(correctLetters);
         }
     }
 
@@ -101,6 +107,15 @@ function submitLetter() {
     }
 
     document.getElementById("enterLetter").value = ''; //clears the input field
+
+    if(correctLetters == word.length) {
+        youWin();
+    }
+}
+
+function youWin() {
+    document.getElementById("message").innerHTML = '<p id="winner">YOU WIN!!</p>'
+    document.getElementById("enterLetter").disabled = true;
 }
 
 function isLetter(a) {
@@ -108,7 +123,7 @@ function isLetter(a) {
 }
 
 function wrongGuess(input) {
-    var letter = input.toString().toLowerCase();
+    var letter = input.toString();
     if(isLetter(letter) && previouslyGuessed.indexOf(letter) === -1) {
         guessesLeft--;
         document.getElementById('guessedLetters').innerHTML += '<p>'+letter+'</p>';
@@ -119,6 +134,7 @@ function wrongGuess(input) {
         if(guessesLeft == 0) {
             document.getElementById("board").innerHTML = '<p>GAME OVER</p> <br> <p>YOU LOSE</p>';
             document.getElementById('enterLetter').disabled = true;
+            document.getElementById('message').innerHTML = 'The word was: ' + word;
         }
     }
 }
