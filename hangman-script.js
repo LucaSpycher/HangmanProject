@@ -46,6 +46,7 @@ var guessesLeft = 10;
 var word = "";
 var categories = [cars, food, animals, randomWords];
 var previouslyGuessed = "";
+var score = 0;
 
 function getWord(num) {
     var category = categories[num];
@@ -95,9 +96,11 @@ function submitLetter() {
         if (word[i] === input) {
             console.log("right guess");
             inWord = true;
-            displayLetterInBoard(input);
-            correctLetters++;
-            console.log(correctLetters);
+            if(previouslyGuessed.indexOf(input) === -1) {
+                displayLetterInBoard(input);
+                correctLetters++;
+                console.log(correctLetters);
+            }
         }
     }
 
@@ -111,11 +114,14 @@ function submitLetter() {
     if(correctLetters == word.length) {
         youWin();
     }
+    previouslyGuessed += input;
 }
 
 function youWin() {
     document.getElementById("message").innerHTML = '<p id="winner">YOU WIN!!</p>'
     document.getElementById("enterLetter").disabled = true;
+    score += guessesLeft;
+    document.getElementById('scoreNum').innerHTML = score;
 }
 
 function isLetter(a) {
@@ -128,7 +134,7 @@ function wrongGuess(input) {
         guessesLeft--;
         document.getElementById('guessedLetters').innerHTML += '<p>'+letter+'</p>';
         document.getElementById('guessesLeft').innerHTML = guessesLeft;
-        previouslyGuessed += letter;
+        //previouslyGuessed += letter;
         document.getElementById('hangmanImage').src = images[guessesLeft];
 
         if(guessesLeft == 0) {
