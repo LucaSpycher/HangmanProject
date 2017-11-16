@@ -1,13 +1,52 @@
 body {
     text-align: center;
 }
+
+body>p {
+    font-family: Georgia Serif;
+    color: #4b4b4b;
+}
+
+h2 {
+    font-family: "Avenir Next Condensed";
+    text-shadow: #bababa 2px 2px;
+}
+
 p {
     display: inline;
 }
 
+
+button {
+    background-color: lightgray;
+    color: rgba(0,0,0,0.81);
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #3a736e;
+    color: white;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+button:active {
+    background-color: #1e3d38;
+    color: white;
+}
+
+select {
+    font-size: 12px;
+
+    box-shadow: black;
+}
+
 #board {
     border: double 5px black;
-    display: none;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     width: auto;
@@ -35,8 +74,10 @@ p {
 }
 
 #hangmanImage {
-    float: left;
     margin: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 #guessesLeftDiv {
@@ -47,8 +88,41 @@ p {
     display: inline;
 }
 
+#guessedLetters p {
+    margin-right: 7px;
+}
+
 #scoreDiv {
     position: absolute;
     top: 5px;
     right: 30px;
+}
+
+#message {
+    margin-top: 10px;
+    color: #d30000;
+}
+
+#message img {
+    height: 100px;
+}
+
+#container {
+    display: none;
+    position: relative;
+}
+
+#previouslyGuessed {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 82%;
+    border: solid black 2px;
+    padding: 5px;
+    width: 140px;
+}
+
+#previouslyGuessed p {
+    color: red;
+    display: inline;
 }

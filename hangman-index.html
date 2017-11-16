@@ -20,18 +20,22 @@
 <br>
 <br>
 
-<div id="board"></div>
+<div id="container">
+    <div id="board"></div>
+    <div id="previouslyGuessed">Incorrect Guesses:
+        <div id="guessedLetters"></div>
+    </div>
+</div>
 
 <div id="guessLetterDiv">
     <label for="enterLetter">Guess a letter:</label>
-    <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="checkEnter(event)">
+    <input type="text" id="enterLetter" size="1" maxlength="1" onkeypress="checkEnter(event)" autocomplete="off">
 </div>
 <div id="guessesLeftDiv">
     <p>Guesses left: </p>
     <div id="guessesLeft"></div>
 </div>
 <div id="message"></div>
-<div id="guessedLetters"></div>
 
 <img id="hangmanImage" src="hangman-script.js">
 

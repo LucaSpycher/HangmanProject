@@ -64,6 +64,7 @@ function startGame() {
     document.getElementById('guessesLeft').innerHTML = "10";
     document.getElementById('guessesLeftDiv').style.display = "block";
     document.getElementById('message').innerHTML = '';
+    document.getElementById('container').style.display = 'block';
 
     //getting word
     getWord(document.getElementById("categorySelect").value);
@@ -71,7 +72,7 @@ function startGame() {
     //setting up board
     var board = document.getElementById("board");
     board.innerHTML = "";
-    board.style.display = "inline-block";
+    //board.style.display = "inline-block";
     document.getElementById("guessLetterDiv").style.display = "block";
     for(var i = 0; i < word.length; i++) {
         board.innerHTML += '<div class='+word[i]+'></div>';
@@ -118,7 +119,7 @@ function submitLetter() {
 }
 
 function youWin() {
-    document.getElementById("message").innerHTML = '<p id="winner">YOU WIN!!</p>'
+    document.getElementById("message").innerHTML = '<img src="https://previews.123rf.com/images/maxborovkov/maxborovkov1604/maxborovkov160400055/54826717-You-win-paper-banner-with-color-confetti-Vector-illustration--Stock-Vector.jpg">'
     document.getElementById("enterLetter").disabled = true;
     score += guessesLeft;
     document.getElementById('scoreNum').innerHTML = score;
@@ -140,7 +141,7 @@ function wrongGuess(input) {
         if(guessesLeft == 0) {
             document.getElementById("board").innerHTML = '<p>GAME OVER</p> <br> <p>YOU LOSE</p>';
             document.getElementById('enterLetter').disabled = true;
-            document.getElementById('message').innerHTML = 'The word was: ' + word;
+            document.getElementById('message').innerHTML = 'The word was ' + word;
         }
     }
 }
